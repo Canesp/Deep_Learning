@@ -150,3 +150,46 @@ Ett tydligt exempel på djupinlärning är dess användning för klassificering 
 Deep learning har blivit en kraftfull metod inom AI och maskininlärning, och dess förmåga att hantera stora datamängder och lösa komplexa problem har lett till innovativa tillämpningar inom olika branscher.
 
 Bra video: https://www.youtube.com/watch?app=desktop&v=q6kJ71tEYqM
+
+## Neurala nätverk
+
+Ett enkelt fully connected neural network består av tre typer av lager, där varje lager i sin tur består av en perceptron.
+
+Funktionen för en perceptron är:
+
+$$
+f(z) = \begin{cases} 
+      1 & \text{om } z > \text{tröskelvärde} \\
+      0 & \text{annars} 
+   \end{cases}
+$$
+
+där $z = \sum_{i=1}^{n} w_i \cdot x_i + b $ är summan av viktade indata plus bias.
+
+### Perceptron:
+
+Varje perceptron tar in flera inputs och producerar 1 output genom att applicera en tröskelfunktion på summan av viktade indata och bias.
+
+### Inputlager:
+
+Inputlager representerar din inputdata. Till exempel kan inputen bestå av tre dimensioner, såsom x-, y- och z-koordinater. I detta exempel resulterar inputen i två dimensioner i outputen.
+
+### Gömda lager:
+
+De gömda lagren utgör kärnan i ett neural network. När det finns många gömda lager kallas det för "deep neural network". Varje ytterligare lager gör modellen mer komplex.
+
+För ett lager i ett neuralt nätverk är den övergripande matematiska operationen:
+
+$$
+A^{[l]} = g^{[l]}(W^{[l]} \cdot A^{[l-1]} + b^{[l]})
+$$
+
+$där A^{[l]} är aktivationsmatrisen för lager (l), (W^{[l]}) är vikterna,$ $(b^{[l]}) är biasen och (g^{[l]}) är den valda aktiveringsfunktionen.$
+
+### Aktiveringsfunktioner:
+
+Det finns många olika aktiveringsfunktioner att välja mellan, inklusive ReLU (Rectified Linear Activation), sigmoid och tanh. Dessa funktioner har stor påverkan på perceptronens output. Det är också möjligt att använda olika aktiveringsfunktioner på olika ställen i nätverket.
+
+### Inferens av NN (Forward pass):
+
+Under inferensen av neurala nätverk matas en datapunkt in och alla beräkningar utförs genom hela nätverket för att få en output.
