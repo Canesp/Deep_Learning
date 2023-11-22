@@ -148,3 +148,5 @@ Djupa neurala nätverk (DNNs) utmärker sig genom sin förmåga att hantera och 
 Ett tydligt exempel på djupinlärning är dess användning för klassificering av bilder. Genom att träna djupa neurala nätverk på ett stort antal bilder kan de identifiera mönster och kännetecken som gör det möjligt att skilja olika objekt eller klasser från varandra med hög noggrannhet. Detta har visat sig vara särskilt framgångsrikt inom områden som bildigenkänning och objektidentifiering.
 
 Deep learning har blivit en kraftfull metod inom AI och maskininlärning, och dess förmåga att hantera stora datamängder och lösa komplexa problem har lett till innovativa tillämpningar inom olika branscher.
+
+Bra video: https://www.youtube.com/watch?app=desktop&v=q6kJ71tEYqM
