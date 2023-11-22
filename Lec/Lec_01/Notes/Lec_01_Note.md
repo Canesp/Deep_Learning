@@ -214,59 +214,54 @@ $$
 
 Där $f^{[1]}$ är aktiveringsfunktionen för det första lagret och $f^{[L]}$ är aktiveringsfunktionen för det sista lagret.
 
-för en datapunkt i från tränings datan ${(xi, yi)}$, så beräknas output av nätverket enligt.
+för en datapunkt i från tränings datan ${(x_i, y_i)}$, så beräknas output av nätverket enligt.
 
-### Hur lär sig ett nätverk 
+### Hur lär sig ett nätverk:
 
-vi försöker approximera en funktion
+Vi försöker approximera en funktion utan att veta exakt vilken funktion det är. Genom att använda input- och outputdata kan vi justera våra nätverksvikter för att minska felet mellan den förutsagda outputen och den verkliga outputen.
 
-vi vet inte vad funktioner är men när vi vet input och output...
+### Loss functions:
 
-### Loss functions
+Loss functions mäter hur mycket nätverkets output skiljer sig från den verkliga outputen. Mean Square Error (MSE) används ofta för regressionsproblem, medan Cross Entropy Loss passar bra för klassificeringsproblem.
 
-ett sätt att mäta hur "fel" vår output jämnfört med gound truth.
+För ett nätverk blir lossen $L(\hat{y_i}, y_i) = Loss$.
 
-Mean square Error (MSE) är populär för regressionsproblem.
+### Bakåtpropagering (Backpropagation):
 
-Cross entropy loss är bra för klassificerings problem.
+Backpropagation är hur vi uppdaterar ett nätverk med avseende på felet, vilket tillåter nätverket att lära sig. Det beräknar gradienten av felet med avseende på vikterna, där felet är skillnaden mellan nätverkets output och den verkliga outputen (ground truth). 
 
-Lossen för ett nätverk blir då L(yhati, yi) = Loss
+### Minima och Maxima:
 
-### bakåtpropagering (back propagation)
+I optimering letar vi efter lokala och globala minima och maxima för att hitta de bästa vikterna för vårt nätverk.
 
-backåtpropagering är hur vi updatatera ett nätverk med avseende på på felet (vilket i sin tur tillåter nätverket att lära sig)...
+### Derivata:
 
-backåtpropagering beräknar gradienten hos vikterna givet ett fel.
+Derivatan representerar lutningen i en given punkt på en funktion.
 
-felet är skillanden i vårt NNs output och vårt svar, vår ground truth.
+### Gradient:
 
-Med bakåtpropagering får vi reada på gradienten hos varje enskild vikt. 
+Gradienten är en vektor som anger riktningen av största lutning för en funktion.
 
-vi vill att alla vikters gradient ska hamna i globala minima, -det betyder att felet på varje vikt är så litet det bara kan bli.
+### Kedjeregeln:
 
-### Minima och maxima
+Kedjeregeln används för att beräkna derivatan av sammansatta funktioner, exempelvis $F(x) = f(g(x))$, där $F(x) = f(g(x)) \cdot g(x)$.
 
-lokala maxima och minima 
+### Backpropagation:
 
-globala maxima och minima
+För varje träningsdatapunkt där vi har en input $x$ och en ground truth $y$, beräknar vi felet i nätverkets output och använder detta för att justera våra vikter.
 
-### derivata 
+### Learning Rate:
 
-lutningen i en punkt. 
+Learning rate bestämmer hur stora steg vi tar i optimeringsprocessen - en högre learning rate ger snabbare inlärning, men det kan också leda till att vi hoppar över det globala minimum.
 
-### Gradient 
+### Hur beräknar vi viktens nya värde?
 
-graienten är en vektor som..
+Gradient descent är en teknik för att uppdatera vikterna genom att förflytta sig i riktningen som minimerar felet.
 
+### Backpropagation vs. Gradient Descent:
 
-### Kedjeregeln
+Backpropagation används för att beräkna gradienten av felet med avseende på varje vikt, medan gradient descent används för att uppdatera vikterna för att minska felet.
 
-the chain rule
+### Att träna ett nätverk - grunderna:
 
-for F(x) = f(g(x))
-
-F(x) = f(g(x)) * g(x)
-
-
-
-
+Genom att slumpmässigt initialisera vikterna kan vi börja optimeringsprocessen för att hitta de bästa vikterna för att minimera felet och förbättra nätverkets prestanda.
