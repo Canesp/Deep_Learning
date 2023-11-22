@@ -184,7 +184,8 @@ $$
 A^{[l]} = g^{[l]}(W^{[l]} \cdot A^{[l-1]} + b^{[l]})
 $$
 
-$där A^{[l]} är aktivationsmatrisen för lager (l), (W^{[l]}) är vikterna,$ $(b^{[l]}) är biasen och (g^{[l]}) är den valda aktiveringsfunktionen.$
+där $A^{[l]}$ är aktivationsmatrisen för lager $(l)$,
+$(W^{[l]})$ är vikterna, $(b^{[l]})$ är biasen och $(g^{[l]})$ är den valda aktiveringsfunktionen.
 
 ### Aktiveringsfunktioner:
 
@@ -193,3 +194,79 @@ Det finns många olika aktiveringsfunktioner att välja mellan, inklusive ReLU (
 ### Inferens av NN (Forward pass):
 
 Under inferensen av neurala nätverk matas en datapunkt in och alla beräkningar utförs genom hela nätverket för att få en output.
+
+För varje datapunkt \(x\) i indata:
+
+- $x$ representerar inputvektorn.
+- $y$ representerar målvektorn.
+- $\hat{y}$ representerar outputvektorn.
+- $L$ representerar antalet lager i neurala nätverket.
+- $f^{[l]}$ är aktiveringsfunktionen vid lager $l$.
+- $w^{[l]}$ $w^{[l]}_{jk}$ representerar vikterna 
+
+mellan lager $l - 1$ och $l$, där $w^{[l]}_{jk}$ är vikten mellan den $k$-te noden i lager $l - 1$ och den $j$-te noden i lager $l$.
+
+Totala ekvationen för nätverket kan beskrivas som:
+
+$$
+g(x) = f^{[L]}(w^{[L]} \cdot f^{[L-1]}(w^{[L-1]} \cdot \ldots \cdot f^{[2]}(w^{[2]} \cdot f^{[1]}(w^{[1]} \cdot x))))
+$$
+
+Där $f^{[1]}$ är aktiveringsfunktionen för det första lagret och $f^{[L]}$ är aktiveringsfunktionen för det sista lagret.
+
+för en datapunkt i från tränings datan ${(xi, yi)}$, så beräknas output av nätverket enligt.
+
+### Hur lär sig ett nätverk 
+
+vi försöker approximera en funktion
+
+vi vet inte vad funktioner är men när vi vet input och output...
+
+### Loss functions
+
+ett sätt att mäta hur "fel" vår output jämnfört med gound truth.
+
+Mean square Error (MSE) är populär för regressionsproblem.
+
+Cross entropy loss är bra för klassificerings problem.
+
+Lossen för ett nätverk blir då L(yhati, yi) = Loss
+
+### bakåtpropagering (back propagation)
+
+backåtpropagering är hur vi updatatera ett nätverk med avseende på på felet (vilket i sin tur tillåter nätverket att lära sig)...
+
+backåtpropagering beräknar gradienten hos vikterna givet ett fel.
+
+felet är skillanden i vårt NNs output och vårt svar, vår ground truth.
+
+Med bakåtpropagering får vi reada på gradienten hos varje enskild vikt. 
+
+vi vill att alla vikters gradient ska hamna i globala minima, -det betyder att felet på varje vikt är så litet det bara kan bli.
+
+### Minima och maxima
+
+lokala maxima och minima 
+
+globala maxima och minima
+
+### derivata 
+
+lutningen i en punkt. 
+
+### Gradient 
+
+graienten är en vektor som..
+
+
+### Kedjeregeln
+
+the chain rule
+
+for F(x) = f(g(x))
+
+F(x) = f(g(x)) * g(x)
+
+
+
+
