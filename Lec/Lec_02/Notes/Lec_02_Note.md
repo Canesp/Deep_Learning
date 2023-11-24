@@ -1,7 +1,6 @@
 # Lec-02 
-**2023-11-23**
+**Datum: 2023-11-23**
 
-<br>
 
 # Neurala nätverksarkitekturer
 
