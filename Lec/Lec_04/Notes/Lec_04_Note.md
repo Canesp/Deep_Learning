@@ -77,3 +77,66 @@ Detta tillvägagångssätt används för att träna neurala nätverk och består
 | Mindre minneskrävande än Batch GD | Mindre variation i gradient och hopp jämfört med Stochastic Batch GD |
 
 ---
+
+## Gradient problem
+
+Får vi för små eller för stora gradienter kan det leda till att nätverket inte uppdateras på ett lämpligt sätt under träningen, vilket kan påverka prestandan hos det neurala nätverket.
+
+### Vanishing gradient problem
+
+Vanishing gradient sker när gradienten sjunker exponentiellt genom nätverkets lager, vilket leder till att vikterna i tidiga lager inte uppdateras tillräckligt under träningen.
+
+Detta fenomen är vanligt förekommande i:
+
+- Ett väldigt djupt nätverk.
+- Aktiveringsfunktioner som exp sigmoid och tanh, då dessa kan generera små gradienter som kan leda till vanishing gradient.
+
+För att undvika eller motverka detta fenomen kan vi göra ändringar i nätverket såsom att ändra aktiveringsfunktionen till mer robusta alternativ och även överväga att korta ner nätverkets djup.
+
+---
+
+### Exploding gradient problem
+
+Exploding gradient innebär att gradienten blir väldigt stor när vi rör oss bakåt i nätverket, vilket kan göra att vikterna uppdateras med mycket stora värden.
+
+För att undvika detta kan vi göra följande ändringar i nätverket:
+
+- Använda L2 Regularisering.
+- Minska nätverkets djup.
+- Minska värdet på learning rate.
+- Använda gradient clipping, det vill säga sätta ett mindre maxvärde på gradienten.
+
+### Momentum
+
+Momentum fungerar på ett sätt som liknar fysikens principer om rörelsemängd (tänk på en boll som rullar ner för en backe).
+
+Genom att lägga till en "historieparameter" hjälper Momentum till att accelerera konvergensen och kan undvika att fastna i lokala minima.
+
+| Fördelar                                      | Nackdelar                                  |
+|-----------------------------------------------|--------------------------------------------|
+| Får nätverket att konvergera snabbare.        | Introducerar en ny parameter.               |
+| Kan undvika att fastna i lokala minima.       |                                            |
+|                                               |                                            |
+
+### RMSProp
+
+Root Mean Square Propagation har en adaptiv learning rate som anpassar sig efter gradientens storlek. Den minskar stegen för stora gradienter och ökar stegen för små gradienter.
+
+| Fördelar                                      | Nackdelar                                  |
+|-----------------------------------------------|--------------------------------------------|
+| Konvergerar snabbare.                          | Introducerar en ny parameter.              |
+| Kan undvika att fastna i lokala minima.       |                                            |
+| Minskar risken för exploding och vanishing gradient. |                                     |
+
+---
+
+### Adam 
+
+Adam står för adaptiv moment estimation och använder sig av adaptiv learning rate. Den kombinerar principer från både Momentum och RMSProp. Det är en väldigt vanligt använd optimeringsalgoritm.
+
+| Fördelar                                      | Nackdelar                                  |
+|-----------------------------------------------|--------------------------------------------|
+| Hyfsat beräkningseffektiv.                    | Kan överanpassa på små dataset.            |
+| Kräver lite minne.                            |                                            |
+| Fungerar bra med stora dataset och många parametrar. |                                       |
+| Har få nackdelar.                             |                                            |
