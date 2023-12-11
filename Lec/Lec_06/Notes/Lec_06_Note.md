@@ -1,4 +1,4 @@
-# Lec-05 
+# Lec-06 
 **Datum: 2023-12-4**
 
 ## CNN (Convolutional Neural Networks)
